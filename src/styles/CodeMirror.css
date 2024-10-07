@@ -1,0 +1,9 @@
+.CodeMirror {
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Fira Code", monospace;
+  height: 400px;
+  padding: 5px;
+  background-color: #282c34;
+}
