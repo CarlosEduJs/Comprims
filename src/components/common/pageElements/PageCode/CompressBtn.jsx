@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Toast from "../../Toast";
 import Modal from "../../Modal";
-import * as esprima from 'esprima';
-
+import * as esprima from "esprima";
 
 const CompressBtn = ({ codeString, modeCompress, typeCode }) => {
+  const getByteSize = (str) => new TextEncoder().encode(str).length;
+
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState("success");
@@ -108,11 +109,11 @@ const CompressBtn = ({ codeString, modeCompress, typeCode }) => {
         codeString={compressedCode}
         codeType={typeCode}
         stats={{
-          originalSize: new Blob([codeString]).size,
-          compressedSize: new Blob([compressedCode]).size,
+          originalSize: getByteSize(codeString),
+          compressedSize: getByteSize(compressedCode),
           reductionPercentage: (
-            ((new Blob([codeString]).size - new Blob([compressedCode]).size) /
-              new Blob([codeString]).size) *
+            ((getByteSize(codeString) - getByteSize(compressedCode)) /
+              getByteSize(codeString)) *
             100
           ).toFixed(2),
         }}

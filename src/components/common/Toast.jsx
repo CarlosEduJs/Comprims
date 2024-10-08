@@ -14,7 +14,7 @@ const Toast = ({ type = "success", message, duration = 5000, onClose }) => {
 
   if (!visible) return null;
 
-  // Estilos e cores para cada tipo de toast
+  
   const typeStyles = {
     success: "bg-green-500 text-white dark:bg-green-600",
     error: "bg-red-500 text-white dark:bg-red-600",
@@ -22,7 +22,7 @@ const Toast = ({ type = "success", message, duration = 5000, onClose }) => {
     warning: "bg-yellow-500 text-white dark:bg-yellow-600",
   };
 
-  // Ícones para cada tipo de toast
+ 
   const typeIcons = {
     success: "bi-check-circle-fill",  // Ícone de sucesso
     error: "bi-exclamation-triangle-fill",  // Ícone de erro
@@ -36,7 +36,6 @@ const Toast = ({ type = "success", message, duration = 5000, onClose }) => {
         visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       } ${typeStyles[type]}`}
     >
-      {/* Ícone específico para cada tipo de toast */}
       <i className={`bi ${typeIcons[type]} text-xl mr-3`}></i>
       <h1 className="flex-grow font-bold text-sm">{message}</h1>
       <button onClick={() => setVisible(false)} className="ml-4 text-white">

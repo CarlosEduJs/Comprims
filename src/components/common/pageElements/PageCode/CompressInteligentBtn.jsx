@@ -12,6 +12,8 @@ const SmartButton = ({ codeString, typeCode }) => {
   const [compressedCode, setCompressedCode] = useState("");
   const [modeCompression, setModeCompression] = useState("Fraca");
 
+  const getByteSize = (str) => new TextEncoder().encode(str).length;
+
   // Funções de compressão
   const compressWeak = (code) => {
     return code
@@ -127,15 +129,12 @@ const SmartButton = ({ codeString, typeCode }) => {
           codeString={compressedCode}
           codeType={typeCode}
           stats={{
-            originalSize: codeString ? new Blob([codeString]).size : 0,
-            compressedSize: compressedCode
-              ? new Blob([compressedCode]).size
-              : 0,
+            originalSize: codeString ? getByteSize(codeString) : 0,
+            compressedSize: compressedCode ? getByteSize(compressedCode) : 0,
             reductionPercentage: codeString
               ? (
-                  ((new Blob([codeString]).size -
-                    new Blob([compressedCode]).size) /
-                    new Blob([codeString]).size) *
+                  ((getByteSize(codeString) - getByteSize(compressedCode)) /
+                    getByteSize(codeString)) *
                   100
                 ).toFixed(2)
               : 0,
