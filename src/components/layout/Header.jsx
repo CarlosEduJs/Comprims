@@ -10,14 +10,17 @@ import {
   BugAntIcon,
   ArrowsPointingInIcon,
   DocumentDuplicateIcon,
+  CodeBracketIcon,
+  SparklesIcon,
+  GlobeAltIcon,
 } from "@heroicons/react/16/solid";
 
 const Header = () => {
   const languages = [
-    { name: "JavaScript", route: "javascript" },
-    { name: "CSS", route: "css" },
-    { name: "HTML", route: "html" },
-    { name: "Json", route: "json" },
+    { name: "JavaScript", icon: CodeBracketIcon, route: "javascript" },
+    { name: "CSS", icon: SparklesIcon, route: "css" },
+    { name: "HTML", icon: GlobeAltIcon, route: "html" },
+    { name: "Json", icon: CodeBracketIcon, route: "json" },
   ];
 
   const location = useLocation();
@@ -47,12 +50,12 @@ const Header = () => {
     }
   }, [location]);
   return (
-    <header className="py-2 px-[50px] border-b border-slate-700 text-gray-600 bg-transparent backdrop-blur-md flex items-center justify-between fixed w-[100vw] z-[70]">
+    <header className="py-2 px-[40px] border-b border-slate-700 text-gray-600 bg-transparent backdrop-blur-md flex items-center justify-between fixed w-[100vw] z-[70]">
       {redirectTo && <Navigate to={redirectTo} replace />}
-      <h1 className="text-slate-400 font-bold">Comprims</h1>
+      <h1 className="text-gradient-animated font-bold">Comprims</h1>
 
       <div className="flex items-center gap-4">
-        <Link to="https://github.com/CarlosEduJs/Comprimis">
+        <Link to="https://github.com/CarlosEduJs/Comprims">
           <button className="text-white text-sm font-bold hover:text-gray-400">
             GitHub
           </button>
@@ -72,7 +75,7 @@ const Header = () => {
               items: [
                 ...languages.map((language) => ({
                   label: language.name,
-                  icon: null,
+                  icon: language.icon,
                   action: () => handleLanguageSelect(language),
                   shortcut: language.name[0],
                 })),

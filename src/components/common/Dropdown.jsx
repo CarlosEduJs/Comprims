@@ -9,7 +9,6 @@ export default function Dropdown({ icon: Icon, options }) {
       <MenuItems className="absolute z-[70] right-0 mt-2 font-bold w-52 origin-top-right rounded-xl text-slate-500  p-1 text-sm/6   backdrop-blur-md bg-slate-800/95   focus:outline-none">
         {options.map((option, index) => (
           <>
-            {/* Verifica se é uma seção com label */}
             {option.label && (
               <div
                 key={`label-${index}`}
@@ -19,7 +18,6 @@ export default function Dropdown({ icon: Icon, options }) {
               </div>
             )}
 
-            {/* Renderiza as opções dentro de uma seção */}
             {option.items?.map((item, idx) => (
               <MenuItem key={`item-${index}-${idx}`}>
                 {({ active }) => (

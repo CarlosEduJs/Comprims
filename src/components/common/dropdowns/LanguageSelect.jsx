@@ -2,12 +2,18 @@ import { useState, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import Dropdown from "../Dropdown";
 
+import {
+  CodeBracketIcon,
+  GlobeAltIcon,
+  SparklesIcon,
+} from "@heroicons/react/16/solid";
+
 const LanguageSelect = () => {
   const languages = [
-    { name: "JavaScript", route: "javascript" },
-    { name: "CSS", route: "css" },
-    { name: "HTML", route: "html" },
-    { name: "Json", route: "json" },
+    { name: "JavaScript", icon: CodeBracketIcon, route: "javascript" },
+    { name: "CSS", icon: SparklesIcon, route: "css" },
+    { name: "HTML", icon: GlobeAltIcon, route: "html" },
+    { name: "Json", icon: CodeBracketIcon, route: "json" },
   ];
 
   const location = useLocation();
@@ -38,9 +44,9 @@ const LanguageSelect = () => {
   }, [location]);
 
   return (
-    <div className="flex items-center justify-between gap-3 w-[220px] border border-slate-700 p-2 rounded-md">
+    <div className="flex items-center justify-between gap-3 w-[220px] border border-slate-700 bg-slate-800 p-2 rounded-md">
       {redirectTo && <Navigate to={redirectTo} replace />}
-      <label className="font-bold text-sm pr-3 border-r border-slate-600">
+      <label className="font-bold text-sm text-gray-300 pr-3 border-r border-slate-600">
         Linguagem
       </label>
       <h1 className="text-sm text-white font-medium">{selectedLanguage}</h1>
@@ -53,7 +59,7 @@ const LanguageSelect = () => {
             items: [
               ...languages.map((language) => ({
                 label: language.name,
-                icon: null,
+                icon: language.icon,
                 action: () => handleLanguageSelect(language),
                 shortcut: language.name[0],
               })),

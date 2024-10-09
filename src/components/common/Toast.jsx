@@ -32,7 +32,7 @@ const Toast = ({ type = "success", message, duration = 5000, onClose }) => {
 
   return (
     <div
-      className={`fixed z-[80] bottom-4 right-4 flex items-center p-4 rounded-lg shadow-lg transition-all duration-300 transform ${
+      className={`fixed z-[80] bottom-4 right-4 flex items-center py-2 px-4 rounded-lg shadow-lg transition-all duration-300 transform ${
         visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       } ${typeStyles[type]}`}
     >

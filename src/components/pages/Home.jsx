@@ -14,8 +14,8 @@ const HOMEPage = () => {
       icon: CodeBracketIcon,
       route: "/compress/javascript",
     },
-    { name: "CSS", icon: GlobeAltIcon, route: "/compress/css" },
-    { name: "HTML", icon: SparklesIcon, route: "/compress/html" },
+    { name: "CSS", icon: SparklesIcon, route: "/compress/css" },
+    { name: "HTML", icon: GlobeAltIcon, route: "/compress/html" },
     { name: "Json", icon: CodeBracketIcon, route: "/compress/json" },
   ];
 

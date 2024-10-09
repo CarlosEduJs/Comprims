@@ -27,7 +27,7 @@ const Modal = ({
         onClick={handleOutsideClick}
       >
         <div
-          className="bg-gray-800 text-white rounded-xl shadow-2xl max-w-3xl w-full transform transition-all duration-300 ease-in-out scale-95 sm:scale-100 overflow-y-auto h-[85vh] relative"
+          className="bg-gray-800 text-white rounded-xl shadow-2xl max-h-[80vh] max-w-3xl w-full transform transition-all duration-300 ease-in-out scale-95 sm:scale-100 overflow-y-auto h-[85vh] relative"
           onClick={(e) => e.stopPropagation()}
         >
           
