@@ -1,8 +1,8 @@
 import { Transition } from "@headlessui/react";
 
 //Modals
-import CodePreview from "./modals/CodePreview";
-import MinificationDetails from "./modals/MinificationDetails";
+import CodePreview from "./Modals/CodePreview";
+import MinificationDetails from "./Modals/MinificationDetails";
 
 const Modal = ({
   isOpen,
