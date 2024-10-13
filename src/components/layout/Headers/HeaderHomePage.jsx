@@ -22,7 +22,7 @@ const HeaderHomePage = () => {
     window.open("https://github.com/CarlosEduJs/Comprims", "_blank");
 
   return (
-    <header className="py-3 px-[10rem] text-gray-600 bg-transparent backdrop-blur-md w-full mb-4 flex items-center justify-between">
+    <header className="py-3 px-5 text-gray-600 bg-transparent backdrop-blur-md w-full mb-4 flex items-center justify-between">
       <h1 className="text-slate-400 font-bold">Comprims</h1>
       <div className="flex items-center gap-4">
         <Dropdown
