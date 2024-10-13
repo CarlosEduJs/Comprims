@@ -33,7 +33,6 @@ function App() {
           <Route path="/compress/javascript" element={<JSPage />} />
           <Route path="/compress/css" element={<CSSPage />} />
           <Route path="/compress/json" element={<JSONPage />} />
-          
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
